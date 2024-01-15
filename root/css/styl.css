@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+header {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: solid green 4px;
+    background: white;
+    position: fixed;
+}
+
+nav {
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+/*obrazek logo */
+img#logo {
+    height: 80%;
+    width: 10%;
+    object-fit: contain;
+}
+
+/*obrazek zelenina v hlavni sekce*/
+img#zelenina {
+    height: 80%;
+    width: auto;
+    object-fit: cover;
+}
+
+img.obrazek-produkt {
+    width: 45%;
+    height: auto;
+}
+
+ul {
+    height: 60%;
+    width: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+}
+
+li {
+    list-style: none;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+/*nahledova sekce*/
+section#domu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*sekce s načtenými produkty*/
+section#produkty {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    padding-top: 15vh;
+}
+
+/*jednotlive produkty*/
+article.produkt {
+    height: 60vh;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border: 5px solid green;
+    border-radius: 10px;
+    margin: 20px;
+
+}
+
+/*clanek pro nadpis v hlaní sekci*/
+article.nadpis-article {
+    height: 80vh;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*article pro obrazek v hlavni sekci*/
+article#nahled {
+    height: 80vh;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*nadpis v hlavni sekci*/
+span#nadpis {
+    font-size: 5vh;
+    font-weight: bold;
+}
+
+span.nazev-produkt {
+    font-size: 4vh;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+p.cena-produkt {
+    font-size: 3vh;
+    font-weight: bolder;
+}
+button.nakup{
+    height: 10%;
+    width: 50%;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+/* 
+button#filtr,
+#razeniNazevVzestupne,
+#razeniNazevSestupne,
+#razeniCenaVzestupne,
+#razeniCenaSestupne {
+    height: 20%;
+    width: 10%;
+    border-radius: 5px;
+    border: none;
+    background-color: green;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+} */
+
+
+/* #kosik {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    border: solid green 5px;
+    border-radius: 5px;
+} */
+
+/* #produkty-kosik {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5em;
+    border: solid green 5px;
+    border-radius: 5px;
+}
+
+form {
+    width: 60%;
+    margin: 10vh;
+} */

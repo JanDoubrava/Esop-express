@@ -1,0 +1,70 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer type="module"></script>
+    <link rel="stylesheet" href="./css/styl.css">
+    <title>
+        <%=titulek%>
+    </title>
+</head>
+
+<body>
+    <!-- hlavicka -->
+    <header>
+        <nav>
+            <img id="logo" src="./picture/logo.png">
+            <ul>
+                <li><a href="#domu">Domů</a></li>
+                <li><a href="#produkty">Produkty</a></li>
+
+                <li><a href="kosik.html">Košík</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- nahledova sekce -->
+    <section id="domu">
+        <article class="nadpis-article">
+            <span id="nadpis"><%=titulek%></span>
+        </article>
+        <article id="nahled">
+            <img id="zelenina" src="./picture/kuchar.png">
+        </article>
+    </section>
+    <!-- filtry,.... -->
+    <form>
+        <label>Minimální cena:</label>
+        <input type="number" id="minCena">
+
+        <label>Maximální cena:</label>
+        <input type="number" id="maxCena">
+
+        <button type="button" id="filtr">Filtrovat</button><br><br>
+
+        <button type="button" id="razeniNazevVzestupne">Název vzestupně</button>
+        <button type="button" id="razeniNazevSestupne">Název sestupně</button>
+        <button type="button" id="razeniCenaVzestupne">Cena vzestupně</button>
+        <button type="button" id="razeniCenaSestupne">Cena sestupně</button>
+    </form>
+
+    <section id="produkty">
+        <% for(const produkt of produkty){%>
+            <article class="produkt">
+                <img class="obrazek-produkt" src="<%= produkt.obrazek %>">
+                <span class="nazev-produkt">
+                    <%= produkt.nazev %>
+
+                </span>
+
+                <p class="cena-produkt">
+                    <%= produkt.cena %> KČ
+                </p>
+                <button class="nakup">Do košíku</button>
+            </article>
+
+            <% } %>
+    </section>
+</body>
+
+</html>
