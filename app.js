@@ -7,6 +7,7 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/template')
 
 app.use(express.static('root'))
+
 app.listen(port, () => {
     console.log("Server poslouchá na portu: " + port)
 })
