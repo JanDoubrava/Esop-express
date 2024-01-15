@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="prihlaseni.css">
+    <title>Prihlaseni</title>
+</head>
+<header>
+    <nav>
+        <img src="logo.png">
+        <ul>
+            <li><a href="index.html#domu">Domů</a></li>
+            <li><a href="index.html">Produkty</a></li>
+            <li><a href="kosik.html">Košík</a></li>
+            <li><a href="prihlaseni.html">Prihlaseni</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <form id="loginForm" onsubmit="return login()">
+        <label for="username">Uživatelské jméno:</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Heslo:</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Přihlásit se">
+    </form>
+</body>
+</html>

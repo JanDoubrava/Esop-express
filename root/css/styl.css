@@ -22,7 +22,7 @@ header {
     justify-content: center;
     align-items: center;
     border-bottom: solid green 4px;
-    background: white;
+    background: red;
     position: fixed;
 }
 
@@ -156,6 +156,8 @@ button.nakup{
     font-size: 1.5em;
     cursor: pointer;
 }
+
+
 /* 
 button#filtr,
 #razeniNazevVzestupne,

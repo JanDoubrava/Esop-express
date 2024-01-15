@@ -2,7 +2,7 @@ const express = require('express')
 const mysql = require("mysql")
 const port = 81
 const app = express()
-let connectionString = 'mysql://root@localhost/projektWP'
+let connectionString = 'mysql://root@localhost/projectwp'
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/template')
 
@@ -12,7 +12,7 @@ app.listen(port, () => {
 })
 app.get("/", (req, res) => {
 
-    const dotaz = "SELECT * from produkty"
+    const dotaz = "SELECT * from products"
     const pripojeni = mysql.createConnection(connectionString)
 
     pripojeni.query(dotaz, (err, data) => {
@@ -22,13 +22,26 @@ app.get("/", (req, res) => {
         console.log(data);
    
     res.render('index', {
-        titulek: "E-shop papání",
+        titulek: "Je libo vitamínek ?",
         produkty: data
 
     })
 })
 })
 
+function login() {
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    if (user == "admin" && pass == "admin") {
+        alert("Přihlášení proběhlo úspěšně");
+        window.location = "admin.html";
+        return false;
+    } else {
+        alert("Špatné uživatelské jméno nebo heslo");
+        return false;
+    }
+}
 
 
 
