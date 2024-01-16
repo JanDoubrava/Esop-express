@@ -15,10 +15,10 @@
         <nav>
             <img id="logo" src="./obrazek/logo.png">
             <ul>
-                <li><a href="#domu">Domů</a></li>
-                <li><a href="#produkty">Produkty</a></li>
+                <li><a href="/#domu">Domů</a></li>
+                <li><a href="/#produkty">Produkty</a></li>
                 <li><a href="kosik.html">Košík</a></li>
-                <li><a href="./prihlaseni.html">Prihlaseni</a></li>
+                <li><a href="./prihlaseni.html">Přihlášení</a></li>
             </ul>
         </nav>
         
@@ -60,11 +60,12 @@
                 <p class="cena-produkt">
                     <%= produkt.Cena %> KČ
                 </p>
-                <button class="nakup">Do košíku</button>
+                <button class="nakup" data-id="<%= produkt.id %>">Do košíku</button>
             </article>
 
             <% } %>
     </section>
+
 </body>
 
 </html>
