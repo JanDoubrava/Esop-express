@@ -21,13 +21,13 @@ app.get("/", (req, res) => {
             res.status(500).send(err.message)
         }
         console.log(data);
-   
-    res.render('index', {
-        titulek: "Je libo vitamínek ?",
-        produkty: data
 
+        res.render('index', {
+            titulek: "Je libo vitamínek ?",
+            produkty: data
+
+        })
     })
-})
 })
 
 function login() {
