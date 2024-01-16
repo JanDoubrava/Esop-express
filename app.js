@@ -43,23 +43,3 @@ function login() {
         return false;
     }
 }
-
-$(document).ready(function() {
-    $(".nakup").click(function() {
-        var productId = $(this).data("id");
-        $.post("/add-to-cart/" + productId, function(data) {
-            if (data.success) {
-                alert("Produkt byl přidán do košíku!");
-            } else {
-                alert("Nepodařilo se přidat produkt do košíku.");
-            }
-        });
-    });
-});
-
-
-
-
-
-// npm i nodemon
-// npm i express

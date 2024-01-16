@@ -38,9 +38,23 @@
         <button type="button" id="razeniCenaVzestupne">Cena vzestupně</button>
         <button type="button" id="razeniCenaSestupne">Cena sestupně</button>
     </form>
-    <section id="kosikProdukty">
-       
-    </section>
+        <section id="produkty">
+            <% for(const produkt of produkty){%>
+                <article class="produkt">
+                    <img class="obrazek-produkt" src="<%= produkt.Obrazek %>">
+                    <span class="nazev-produkt">
+                        <%= produkt.Nazev %>
+    
+                    </span>
+    
+                    <p class="cena-produkt">
+                        <%= produkt.Cena %> KČ
+                    </p>
+                    <button class="nakup" data-id="<%= produkt.id %>">Odebrat</button>
+                </article>
+    
+                <% } %>
+        </section>
 </body>
 
 </html>
