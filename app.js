@@ -34,7 +34,7 @@ function login() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
-    if (user == "admin" && pass == "admin") {
+    if (user == "1" && pass == "1") {
         alert("Přihlášení proběhlo úspěšně");
         window.location = "admin.html";
         return false;
