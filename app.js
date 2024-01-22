@@ -27,6 +27,18 @@ app.get("/", (req, res) => {
             produkty: data
 
         })
+     // Předpokládáme, že máte nainstalovaný a naimportovaný balíček 'node-localstorage'
+var LocalStorage = require('node-localstorage').LocalStorage;
+localStorage = new LocalStorage('./scratch');
+
+// Načtěte data z Local Storage
+var data = JSON.parse(localStorage.getItem('produkty'));
+
+// Renderujte stránku s daty z Local Storage
+res.render('kosik', {
+    titulek: "Ber, nebo neber, nebo jdu pryč",
+    produkty: data
+});
     })
 })
 
@@ -34,7 +46,7 @@ function login() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;
 
-    if (user == "1" && pass == "1") {
+    if (user == "user" && pass == "12345") {
         alert("Přihlášení proběhlo úspěšně");
         window.location = "admin.html";
         return false;
@@ -43,3 +55,21 @@ function login() {
         return false;
     }
 }
+
+/*
+$(document).ready(function() {
+    $(".nakup").click(function() {
+        // Získejte ID produktu
+        var id = $(this).data("id");
+
+        // Získejte aktuální data z Local Storage
+        var data = JSON.parse(localStorage.getItem('produkty')) || [];
+
+        // Přidejte nový produkt do dat
+        data.push(id);
+
+        // Uložte data zpět do Local Storage
+        localStorage.setItem('produkty', JSON.stringify(data)); 
+    });
+});
+*/
