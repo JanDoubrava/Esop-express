@@ -5,7 +5,10 @@ const app = express()
 let connectionString = 'mysql://root@localhost/projectwp'
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/template')
-
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+const { window } = new JSDOM();
+const $ = require('jquery')(window);
 app.use(express.static('root'))
 
 app.listen(port, () => {
@@ -27,18 +30,7 @@ app.get("/", (req, res) => {
             produkty: data
 
         })
-     // Předpokládáme, že máte nainstalovaný a naimportovaný balíček 'node-localstorage'
-var LocalStorage = require('node-localstorage').LocalStorage;
-localStorage = new LocalStorage('./scratch');
 
-// Načtěte data z Local Storage
-var data = JSON.parse(localStorage.getItem('produkty'));
-
-// Renderujte stránku s daty z Local Storage
-res.render('kosik', {
-    titulek: "Ber, nebo neber, nebo jdu pryč",
-    produkty: data
-});
     })
 })
 
@@ -55,21 +47,3 @@ function login() {
         return false;
     }
 }
-
-/*
-$(document).ready(function() {
-    $(".nakup").click(function() {
-        // Získejte ID produktu
-        var id = $(this).data("id");
-
-        // Získejte aktuální data z Local Storage
-        var data = JSON.parse(localStorage.getItem('produkty')) || [];
-
-        // Přidejte nový produkt do dat
-        data.push(id);
-
-        // Uložte data zpět do Local Storage
-        localStorage.setItem('produkty', JSON.stringify(data)); 
-    });
-});
-*/
