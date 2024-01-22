@@ -28,12 +28,18 @@ app.get("/", (req, res) => {
         res.render('index', {
             titulek: "Je libo vitamínek ?",
             produkty: data
-
         })
 
     })
 })
+app.get("/kosik", (req, res) => {
 
+        res.render('kosik', {
+            titulek: "Ber nebo neber nebo jdu pryč!",
+             })
+
+    })
+ 
 function login() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;

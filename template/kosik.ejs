@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styl.css">
     <link rel="stylesheet" href="./css/prihlaseni.css">
-    <script src="main.js"></script>
+   
     <script src="app.js"></script>
     <title>Kosik</title>
 </head>
@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="/#domu">Domů</a></li>
                 <li><a href="/#produkty">Produkty</a></li>
-                <li><a href="./kosik.ejs">Košík</a></li>
+                <li><a href="/kosik">Košík</a></li>
                 <li><a href="./prihlaseni.html">Přihlášení</a></li>
             </ul>
         </nav>
@@ -39,23 +39,8 @@
         <button type="button" id="razeniCenaVzestupne">Cena vzestupně</button>
         <button type="button" id="razeniCenaSestupne">Cena sestupně</button>
     </form>
-        <section id="produkty">
-            <% for(const produkt of produkty){%>
-                <article class="produkt">
-                    <img class="obrazek-produkt" src="<%= produkt.Obrazek %>">
-                    <span class="nazev-produkt">
-                        <%= produkt.Nazev %>
     
-                    </span>
-    
-                    <p class="cena-produkt">
-                        <%= produkt.Cena %> KČ
-                    </p>
-                    <button class="nakup" data-id="<%= produkt.id %>">Odebrat</button>
-                </article>
-    
-                <% } %>
-        </section>
+</section>
 </body>
 
 </html>
