@@ -99,7 +99,7 @@ section#produkty {
 }
 
 /*jednotlive produkty*/
-article.produkt,.produkt-v-kosiku {
+article.produkt,.produkty-kosik {
     height: 60vh;
     width: 30%;
     display: flex;
@@ -194,6 +194,25 @@ button {
     background-color: #DC3545;
 }
 
+.produkty-kosik div {
+    display: grid;
+    grid-template-columns: 50px auto auto;
+    grid-gap: 10px;
+    align-items: center;
+    border: 1px solid green;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.produkty-kosik img {
+    width: 30px;
+    height: 30px;
+}
+
+.produkty-kosik h2, .produkty-kosik p {
+    margin: 0;
+}
 /* 
 button#filtr,
 #razeniNazevVzestupne,

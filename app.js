@@ -1,3 +1,19 @@
+/*
+- vypsat produkty z local storage do kosiku
+- zajistit funkčnost filtru
+- odeslani objednavky z košiku 
+- bude potreba vyplnit udaje od toho kdo objednava
+- po prihlaseni na strance Prihlaseni zustane otevrena admin cast pres session
+- v admin casti bude potvrzovani a odmitani objednavek
+- moznost odebirani a pridavani produktu v admin casti
+
+
+*/ 
+
+
+
+
+
 const express = require('express')
 const mysql = require("mysql")
 const port = 81
@@ -29,32 +45,12 @@ app.get("/", (req, res) => {
 
     })
 })
-app.get("/kosik", (req, res) => {
 
-        res.render('kosik', {
-            titulek: "Ber nebo neber nebo jdu pryč!",
-             })
-
-    })
-    app.get('/cesta', function(req, res) {
-        var produkto = [];
-        for (var i = 0; i < localStorage.length; i++) {
-            var id = localStorage.key(i);
-            var produkta = JSON.parse(localStorage.getItem(id));
-            produkto.push(produkta);
-        }
-        res.render('cesta', { produkto: produkto });
+app.get('/kosik', (req, res) => {
+    
+    res.render('kosik', {
+        titulek: "Ber nebo neber nebo jdu pryč!",
+    
     });
-function login() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
+});
 
-    if (user == "user" && pass == "12345") {
-        alert("Přihlášení proběhlo úspěšně");
-        window.location = "admin.html";
-        return false;
-    } else {
-        alert("Špatné uživatelské jméno nebo heslo");
-        return false;
-    }
-}
