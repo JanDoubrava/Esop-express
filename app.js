@@ -5,10 +5,7 @@ const app = express()
 let connectionString = 'mysql://root@localhost/projectwp'
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/template')
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const { window } = new JSDOM();
-const $ = require('jquery')(window);
+
 app.use(express.static('root'))
 
 app.listen(port, () => {
@@ -39,7 +36,15 @@ app.get("/kosik", (req, res) => {
              })
 
     })
- 
+    app.get('/cesta', function(req, res) {
+        var produkto = [];
+        for (var i = 0; i < localStorage.length; i++) {
+            var id = localStorage.key(i);
+            var produkta = JSON.parse(localStorage.getItem(id));
+            produkto.push(produkta);
+        }
+        res.render('cesta', { produkto: produkto });
+    });
 function login() {
     var user = document.getElementById("username").value;
     var pass = document.getElementById("password").value;

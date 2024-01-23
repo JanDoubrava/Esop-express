@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styl.css">
     <link rel="stylesheet" href="./css/prihlaseni.css">
-   
+    <script src="kosik.js"></script>
+
     <script src="app.js"></script>
     <title>Kosik</title>
 </head>
 
 <body>
+    <!-- header -->
     <header>
         <nav>
-            <img id="logo" src="./obrazek/logo.png">
+            <img id="logo" src="./obrazek/prasatko.png">
             <ul>
                 <li><a href="/#domu">Domů</a></li>
                 <li><a href="/#produkty">Produkty</a></li>
@@ -22,10 +24,21 @@
                 <li><a href="./prihlaseni.html">Přihlášení</a></li>
             </ul>
         </nav>
-        
+
     </header>
-      <!-- filtry,.... -->
-      <form>
+    <!-- horni cast, nadpis -->
+    <section id="domu">
+        <article class="nadpis-article">
+            <span id="nadpis">
+                <%=titulek%>
+            </span>
+        </article>
+        <article id="nahled">
+            <img id="zelenina" src="./obrazek/kosik-chalky.png">
+        </article>
+    </section>
+    <!-- filtry -->
+    <form>
         <label>Minimální cena:</label>
         <input type="number" id="minCena">
 
@@ -39,7 +52,22 @@
         <button type="button" id="razeniCenaVzestupne">Cena vzestupně</button>
         <button type="button" id="razeniCenaSestupne">Cena sestupně</button>
     </form>
-    
+    <!-- produkty -->
+<section id="produkty">
+    <% for(const produkta of produkto){%>
+        <article class="produkt">
+            <img class="obrazek-produkt" src="<%= produkt.Obrazek %>">
+            <span class="nazev-produkt">
+                <%= produkt.Nazev %>
+            </span>
+
+            <p class="cena-produkt">
+                <%= produkt.Cena %> Kč
+            </p>
+            <button class="nakup">Odebrat</button>
+            
+        </article>
+    <% } %>
 </section>
 </body>
 
