@@ -10,7 +10,7 @@
     <title>Kosik</title>
 </head>
 
-<body>
+<body onload="vypisKosik()">
     <!-- header -->
     <header>
         <nav>
@@ -19,7 +19,7 @@
                 <li><a href="/#domu">Domů</a></li>
                 <li><a href="/#produkty">Produkty</a></li>
                 <li><a href="/kosik">Košík</a></li>
-                <li><a href="./prihlaseni.html">Přihlášení</a></li>
+                <li><a href="/prihlaseni">Přihlášení</a></li>
                 
             </ul>
         </nav>
@@ -36,24 +36,11 @@
             <img id="zelenina" src="./obrazek/kosik-chalky.png">
         </article>
     </section>
-    <!-- filtry -->
-    <form>
-        <label>Minimální cena:</label>
-        <input type="number" id="minCena">
-
-        <label>Maximální cena:</label>
-        <input type="number" id="maxCena">
-
-        <button type="button" id="filtr">Filtrovat</button><br><br>
-
-        <button type="button" id="razeniNazevVzestupne">Název vzestupně</button>
-        <button type="button" id="razeniNazevSestupne">Název sestupně</button>
-        <button type="button" id="razeniCenaVzestupne">Cena vzestupně</button>
-        <button type="button" id="razeniCenaSestupne">Cena sestupně</button>
-    </form>
+    
     <!-- produkty -->
     <article class="produkty-kosik">
         <!-- Zde se zobrazí produkty v košíku -->
+        
     </article>
 </body>
 

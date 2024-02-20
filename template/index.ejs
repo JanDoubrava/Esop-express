@@ -21,7 +21,7 @@
                 <li><a href="/#domu">Domů</a></li>
                 <li><a href="/#produkty">Produkty</a></li>
                 <li><a href="/kosik">Košík</a></li>
-                <li><a href="./prihlaseni.html">Přihlášení</a></li>
+                <li><a href="/prihlaseni">Přihlášení</a></li>
             </ul>
         </nav>
 
@@ -65,7 +65,7 @@
                 <p class="cena-produkt">
                     <%= produkt.Cena %> Kč
                 </p>
-                <button class="nakup" data-id="<%= produkt.id %>" onclick="pridejDoKosiku()">Do košíku</button>
+                <button class="nakup" data-id="<%= produkt.id %>" onclick="pridejDoKosiku(this)">Do košíku</button>
                 
             </article>
             <% } %>

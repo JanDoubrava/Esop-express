@@ -31,13 +31,9 @@ function pridejDoKosiku(button) {
     alert('Produkt byl přidán do košíku');
 }
 
-function nactiKosik(){
-    var kosik = JSON.parse(localStorage.getItem('kosik')) || [];
-    return kosik;
-}
 
 function vypisKosik(){
-    var produkty = nactiKosik();
+    var produkty = JSON.parse(localStorage.getItem('kosik')) || [];
     var kosikDiv = document.querySelector('.produkty-kosik');
     kosikDiv.innerHTML = '';
     produkty.forEach(function(produkt) {

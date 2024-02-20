@@ -53,4 +53,12 @@ app.get('/kosik', (req, res) => {
     
     });
 });
+app.get('/prihlaseni', (req, res) => {
+    
+    res.render('prihlaseni', {
+        titulek: "Uspěšně přihlášeno!",
+    
+    });
+});
+
 
