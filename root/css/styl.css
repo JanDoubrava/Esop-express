@@ -213,6 +213,19 @@ button {
 .produkty-kosik h2, .produkty-kosik p {
     margin: 0;
 }
+
+.celkovaCena {
+    font-size: bolder;
+    color: black;
+    display: grid;
+    align-items: center;
+    border: 1px solid green;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
 /* 
 button#filtr,
 #razeniNazevVzestupne,

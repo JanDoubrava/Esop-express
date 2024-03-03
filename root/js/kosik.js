@@ -49,12 +49,15 @@ function vypisKosik(){
     });
     
 }
-
+let cenaText = document.querySelector(".cenaText");
 function celkovaCenaKosiku(){
     let cena = 0;
-    let kosik = JSON.parse(localStorage.getItem('kosik'))
+    let kosik = JSON.parse(localStorage.getItem('kosik'));
     for (let i = 0; i < kosik.length; i++) {
-        cena = cena + kosik[i].Cena 
+        cena = cena + kosik[i].cena ;
+        cenaText.innerHTML =  `  <p>${cena}</p>`;
+
+       
         
     }
 }
