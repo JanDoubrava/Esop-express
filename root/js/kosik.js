@@ -11,6 +11,7 @@ function login() {
         return false;
     }
 }
+
 function pridejDoKosiku(button) {
     var produkt = button.parentElement;
     var id = button.getAttribute('data-id');
@@ -23,12 +24,13 @@ function pridejDoKosiku(button) {
         Nazev: nazev,
         Cena: cena
     };
-
+   
     var kosik = JSON.parse(localStorage.getItem('kosik')) || [];
     kosik.push(produktData);
     localStorage.setItem('kosik', JSON.stringify(kosik));
 
     alert('Produkt byl přidán do košíku');
+    alert(kosik);
 }
 
 
@@ -43,6 +45,16 @@ function vypisKosik(){
             <h2>${produkt.Nazev}</h2>
             <p>${produkt.Cena}</p>
         `;
-        kosikDiv.appendChild(produktDiv);
+        kosikDiv.append(produktDiv);
     });
+    
+}
+
+function celkovaCenaKosiku(){
+    let cena = 0;
+    let kosik = JSON.parse(localStorage.getItem('kosik'))
+    for (let i = 0; i < kosik.length; i++) {
+        cena = cena + kosik[i].Cena 
+        
+    }
 }
