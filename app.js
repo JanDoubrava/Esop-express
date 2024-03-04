@@ -1,6 +1,6 @@
 /*
-- vypsat produkty z local storage do kosiku
-- zajistit funkčnost filtru
+- vypsat produkty z local storage do kosiku #
+- zajistit funkčnost filtru ----
 - odeslani objednavky z košiku 
 - bude potreba vyplnit udaje od toho kdo objednava
 - po prihlaseni na strance Prihlaseni zustane otevrena admin cast pres session
@@ -10,11 +10,10 @@
 
 */ 
 
-
-
-
-
 const express = require('express')
+const session = require("express-session")
+const bcrypt = require("bcrypt")
+const bodyParser = require("body-parser")
 const mysql = require("mysql")
 const port = 81
 const app = express()
@@ -23,7 +22,8 @@ app.set('view engine', 'ejs')
 app.set('views', __dirname + '/template')
 
 app.use(express.static('root'))
-
+app.use(bodyParser.urlencoded ({extended: false}))
+app.use(session({secret: "secret"}))
 app.listen(port, () => {
     console.log("Server poslouchá na portu: " + port)
 })
@@ -60,5 +60,33 @@ app.get('/prihlaseni', (req, res) => {
     
     });
 });
+app.post("/prihlasit", (req, res) => {
+    let user = req.body.user;
+    let pass = req.body.pass;
+    const dotaz = "SELECT id,jmeno,heslo FROM uzivatel WHERE email = ?"
+    const pripojeni = mysql.createConnection(connectionString)
+    pripojeni.query(dotaz, [email], async (err, data) => {
+        if (err) {
+            res.status(500).send(err.message)
+        }
+        else {
+            if (data.length > 0) {
+
+                if (await bcrypt.compare(heslo, data[0].heslo)) {
+                    if (email === "admin@email.cz") {
+                        req.session.email = email;
+                        res.redirect("/objednavky");
+
+                    } else {
+                        req.session.email = email;
+                        res.redirect("/");
+                    }
+                }
+
+            }
+
+        }
+    })
+})
 
 

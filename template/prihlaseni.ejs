@@ -21,13 +21,14 @@
     
 </header>
 <body>
-    <section id="form-section">
-        <form id="loginForm" onsubmit="return login()">
+    <section id="form-section"> 
+        <form id="loginForm" action="/prihlasit " method="post">
             <label for="username">Uživatelské jméno:</label><br>
             <input type="text" id="username" name="username"><br>
             <label for="password">Heslo:</label><br>
             <input type="password" id="password" name="password"><br>
             <input type="submit" value="Přihlásit se">
+            <p>Chcete vytvořit učet?<a href="/registrace">Zaregistrovat se</a></p>
         </form>
     </section>
    
