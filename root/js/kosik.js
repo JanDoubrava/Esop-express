@@ -1,16 +1,4 @@
-function login() {
-    var user = document.getElementById("username").value;
-    var pass = document.getElementById("password").value;
 
-    if (user == "1" && pass == "1") {
-        alert("Přihlášení proběhlo úspěšně");
-        window.location = "admin.html";
-        return false;
-    } else {
-        alert("Špatné uživatelské jméno nebo heslo");
-        return false;
-    }
-}
 
 function pridejDoKosiku(button) {
     var produkt = button.parentElement;
@@ -60,4 +48,34 @@ function celkovaCenaKosiku(){
        
         
     }
+}
+
+function vytvoritObjednavku() {
+    document.getElementById('objednavkaForm').style.display = 'block';
+}
+
+function odeslatObjednavku(event) {
+    event.preventDefault();
+    let jmeno = document.getElementById('jmeno').value;
+    let email = document.getElementById('email').value;
+    let objednavka = {
+        jmeno: jmeno,
+        email: email,
+        produkty: localStorage.getItem('kosik')
+    };
+    fetch('/objednavky', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(objednavka),
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert('Objednávka byla úspěšně odeslána:', data);
+        localStorage.removeItem('produkty'); // vymazání produktů z localStorage
+    })
+    .catch((error) => {
+        console.error('Chyba:', error);
+    });
 }

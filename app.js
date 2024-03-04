@@ -24,6 +24,8 @@ app.set('views', __dirname + '/template')
 app.use(express.static('root'))
 app.use(bodyParser.urlencoded ({extended: false}))
 app.use(session({secret: "secret"}))
+app.use(bodyParser.json());
+
 app.listen(port, () => {
     console.log("Server poslouchá na portu: " + port)
 })
@@ -128,4 +130,14 @@ app.post("/registrace", async (req, res) => {
     });
 
 })
+// vytvoření objednavky 
+app.post('/objednavky', (req, res) => {
+    let objednavka = req.body;
+    let sql = 'INSERT INTO objednavky SET ?';
+    db.query(sql, objednavka, (err, result) => {
+        if (err) throw err;
+        alert(result);
+        res.send('Objednávka byla vytvořena');
+    });
+});
 
