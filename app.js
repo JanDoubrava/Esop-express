@@ -27,6 +27,7 @@ app.use(session({secret: "secret"}))
 app.listen(port, () => {
     console.log("Server poslouchá na portu: " + port)
 })
+// hlavni stranka ejs
 app.get("/", (req, res) => {
 
     const dotaz = "SELECT * from products"
@@ -45,7 +46,7 @@ app.get("/", (req, res) => {
 
     })
 })
-
+//kosik ejs
 app.get('/kosik', (req, res) => {
     
     res.render('kosik', {
@@ -53,6 +54,7 @@ app.get('/kosik', (req, res) => {
     
     });
 });
+//prihlaseni ejs
 app.get('/prihlaseni', (req, res) => {
     
     res.render('prihlaseni', {
@@ -60,25 +62,44 @@ app.get('/prihlaseni', (req, res) => {
     
     });
 });
+// registrace ejs
+app.get('/registrace', (req, res) => {
+    
+    res.render('registrace', {
+    
+        titulek: "Registrujte se!",
+    });
+});
+
+// obednavka ejs
+app.get('/objednavka', (req, res) => {
+    
+    res.render('objednavka', {
+    
+        titulek: "Všechny objednavky",
+    });
+});
+
+// prihlaseni uzivatele
 app.post("/prihlasit", (req, res) => {
     let user = req.body.user;
     let pass = req.body.pass;
-    const dotaz = "SELECT id,jmeno,heslo FROM uzivatel WHERE email = ?"
+    const MYSQLdotaz = "SELECT id,user,password FROM users WHERE user = ?"
     const pripojeni = mysql.createConnection(connectionString)
-    pripojeni.query(dotaz, [email], async (err, data) => {
+    pripojeni.query(MYSQLdotaz, [user], async (err, data) => {
         if (err) {
             res.status(500).send(err.message)
         }
         else {
             if (data.length > 0) {
 
-                if (await bcrypt.compare(heslo, data[0].heslo)) {
-                    if (email === "admin@email.cz") {
-                        req.session.email = email;
-                        res.redirect("/objednavky");
+                if (await bcrypt.compare(pass, data[0].password)) {
+                    if (user === "JendaAdmin") {
+                        req.session.user = user;
+                        res.redirect("/objednavka");
 
                     } else {
-                        req.session.email = email;
+                        req.session.user = user;
                         res.redirect("/");
                     }
                 }
@@ -88,5 +109,23 @@ app.post("/prihlasit", (req, res) => {
         }
     })
 })
+// registrace uzivatele
+app.post("/registrace", async (req, res) => {
+    let jmeno = req.body.user;
+    let heslo = req.body.password;
+    const cryptHeslo = await bcrypt.hash(heslo, 8);
+    let values = [[jmeno, cryptHeslo]];
+    const dotaz = "INSERT INTO users (user, password) VALUES ?";
+    const pripojeni = mysql.createConnection(connectionString)
+    pripojeni.query(dotaz, [values], (err) => {
+        if (err) {
+            res.status(500).send(err.message)
+        }
+        else {
+            res.send("Registrace úspěšná");
+        }
 
+    });
+
+})
 

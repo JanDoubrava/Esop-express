@@ -1,21 +1,240 @@
-* {
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        height: 100vh;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        flex-direction: column;
+    }
+    
+    header {
+        height: 20vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: double rgb(4, 94, 9) 8px ;
+        background: lightgray;
+        position: sticky;
+        top: 0;
+    }
+    
+    nav {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    img#logo {
+        height: 70%;
+        width: 15%;
+        object-fit: contain;
+    }
+    
+    img#zelenina {
+        height: 70%;
+        width: auto;
+        object-fit: cover;
+    }
+    
+    img.obrazek-produkt {
+        width: 50%;
+        height: auto;
+    }
+    
+    ul {
+        height: 50%;
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+    }
+    
+    li {
+        list-style: none;
+        height: 100%;
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 3vh;
+        font-weight: bold;
+    }
+    
+    section#domu {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    section#produkty {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        padding-top: 15vh;
+    }
+    
+    article.produkt,.produkty-kosik {
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 5px solid rgb(8, 159, 31);
+        border-radius: 10px;
+        margin: 20px;
+    }
+    
+    article.nadpis-article {
+        height: 70vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    article#nahled {
+        height: 70vh;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    span#nadpis {
+        font-size: 4vh;
+        font-weight: bold;
+    }
+    
+    span.nazev-produkt {
+        font-size: 3vh;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+    }
+    p.cena-produkt {
+        font-size: 2vh;
+        font-weight: bolder;
+    }
+    button.nakup{
+        height: 10%;
+        width: 50%;
+        border-radius: 5px;
+        border: none;
+        background-color: lawngreen;
+        color: white;
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+    form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="number"] {
+        width: 150px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid black;
+    }
+    
+    button {
+        padding: 5px 10px;
+        border-radius: 5px;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #filtr {
+        background-color: #007BFF;
+    }
+    
+    #razeniNazevVzestupne, #razeniCenaVzestupne {
+        background-color: #28A745;
+    }
+    
+    #razeniNazevSestupne, #razeniCenaSestupne {
+        background-color: #DC3545;
+    }
+    
+    .produkty-kosik div {
+        display: grid;
+        grid-template-columns: 50px auto auto;
+        grid-gap: 10px;
+        align-items: center;
+        border: 1px solid green;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+    }
+    
+    .produkty-kosik img {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .produkty-kosik h2, .produkty-kosik p {
+        margin: 0;
+    }
+    
+    .celkovaCena {
+        font-size: bolder;
+        color: black;
+        display: grid;
+        align-items: center;
+        border: 1px solid green;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 250px;
+    }
+    
+    /* * * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     scroll-behavior: smooth;
-}
+    }
 
-body {
+    body {
     height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
 
-}
+    }
 
-header {
+    header {
     height: 15vh;
     width: 100%;
     display: flex;
@@ -24,82 +243,82 @@ header {
     border-bottom: double rgb(4, 94, 9) 8px ;
     background: white;
     position: relative;
-}
+    }
 
-nav {
+    nav {
     height: 100%;
     width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-}
+    }
 
-/*obrazek logo */
-img#logo {
+    /*obrazek logo */
+    /* img#logo {
     height: 80%;
     width: 10%;
     object-fit: contain;
-}
+    } */
 
-/*obrazek zelenina v hlavni sekce*/
-img#zelenina {
+    /*obrazek zelenina v hlavni sekce*/
+    /* img#zelenina {
     height: 80%;
     width: auto;
     object-fit: cover;
-}
+    }
 
-img.obrazek-produkt {
+    img.obrazek-produkt {
     width: 45%;
     height: auto;
-}
+    }
 
-ul {
+    ul {
     height: 60%;
     width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: white;
-}
+    }
 
-li {
+    li {
     list-style: none;
     height: 100%;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    }
 
-a {
+    a {
     text-decoration: none;
     color: black;
     font-size: 4vh;
     font-weight: bold;
-}
+    } */
 
-/*nahledova sekce*/
-section#domu {
+    /*nahledova sekce*/
+    /* section#domu {
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
+    } */
 
-/*sekce s načtenými produkty*/
-section#produkty {
+    /*sekce s načtenými produkty*/
+    /* section#produkty {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
     /* justify-content: center; */
-    padding-top: 15vh;
-}
+    /* padding-top: 15vh;
+    } */
 
-/*jednotlive produkty*/
-article.produkt,.produkty-kosik {
+    /*jednotlive produkty*/
+    /* article.produkt,.produkty-kosik {
     height: 60vh;
     width: 30%;
     display: flex;
@@ -110,43 +329,43 @@ article.produkt,.produkty-kosik {
     border-radius: 10px;
     margin: 20px;
 
-}
+    } */
 
-/*clanek pro nadpis v hlaní sekci*/
-article.nadpis-article {
+    /*clanek pro nadpis v hlaní sekci*/
+    /* article.nadpis-article {
     height: 80vh;
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    } */
 
-/*article pro obrazek v hlavni sekci*/
-article#nahled {
+    /*article pro obrazek v hlavni sekci*/
+    /* article#nahled {
     height: 80vh;
     width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+    } */
 
-/*nadpis v hlavni sekci*/
-span#nadpis {
+    /*nadpis v hlavni sekci*//*
+    span#nadpis {
     font-size: 5vh;
     font-weight: bold;
-}
+    }
 
-span.nazev-produkt {
+    span.nazev-produkt {
     font-size: 4vh;
     font-weight: bold;
     display: flex;
     justify-content: center;
-}
-p.cena-produkt {
+    }
+    p.cena-produkt {
     font-size: 3vh;
     font-weight: bolder;
-}
-button.nakup{
+    }
+    button.nakup{
     height: 10%;
     width: 50%;
     border-radius: 5px;
@@ -155,46 +374,46 @@ button.nakup{
     color: white;
     font-size: 1.5em;
     cursor: pointer;
-}
-form {
+    }
+    form {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
-}
+    }
 
-label {
+    label {
     font-weight: bold;
-}
+    }
 
-input[type="number"] {
+    input[type="number"] {
     width: 200px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid black;
-}
+    }
 
-button {
+    button {
     padding: 5px 10px;
     border-radius: 5px;
     border: none;
     color: white;
     cursor: pointer;
-}
+    }
 
-#filtr {
+    #filtr {
     background-color: #007BFF;
-}
+    }
 
-#razeniNazevVzestupne, #razeniCenaVzestupne {
+    #razeniNazevVzestupne, #razeniCenaVzestupne {
     background-color: #28A745;
-}
+    }
 
-#razeniNazevSestupne, #razeniCenaSestupne {
+    #razeniNazevSestupne, #razeniCenaSestupne {
     background-color: #DC3545;
-}
+    }
 
-.produkty-kosik div {
+    .produkty-kosik div {
     display: grid;
     grid-template-columns: 50px auto auto;
     grid-gap: 10px;
@@ -203,18 +422,18 @@ button {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-}
+    }
 
-.produkty-kosik img {
+    .produkty-kosik img {
     width: 30px;
     height: 30px;
-}
+    }
 
-.produkty-kosik h2, .produkty-kosik p {
+    .produkty-kosik h2, .produkty-kosik p {
     margin: 0;
-}
+    }
 
-.celkovaCena {
+    .celkovaCena {
     font-size: bolder;
     color: black;
     display: grid;
@@ -224,8 +443,8 @@ button {
     margin-bottom: 10px;
     border-radius: 5px;
     width: 300px;
-}
-
+    }
+*/
 /* 
 button#filtr,
 #razeniNazevVzestupne,
