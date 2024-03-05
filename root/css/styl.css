@@ -1,178 +1,209 @@
     
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Arial', sans-serif;
-        scroll-behavior: smooth;
-    }
-    
-    body {
-        height: 100vh;
-        width: 100%;
-        display: grid;
-        place-items: center;
-        flex-direction: column;
-    }
-    
-    header {
-        height: 20vh;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: double rgb(4, 94, 9) 8px ;
-        background: lightgray;
-        position: sticky;
-        top: 0;
-    }
-    
-    nav {
-        height: 100%;
-        width: 80%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    img#logo {
-        height: 70%;
-        width: 15%;
-        object-fit: contain;
-    }
-    
-    img#zelenina {
-        height: 70%;
-        width: auto;
-        object-fit: cover;
-    }
-    
-    img.obrazek-produkt {
-        width: 50%;
-        height: auto;
-    }
-    
-    ul {
-        height: 50%;
-        width: 70%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-    }
-    
-    li {
-        list-style: none;
-        height: 100%;
-        width: 40%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    a {
-        text-decoration: none;
-        color: black;
-        font-size: 3vh;
-        font-weight: bold;
-    }
-    
-    section#domu {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-    }
-    
-    section#produkty {
-        height: 100%;
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 1rem;
-        padding-top: 15vh;
-    }
-    
-    article.produkt,.produkty-kosik {
-        height: 60vh;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        border: 5px solid rgb(8, 159, 31);
-        border-radius: 10px;
-        margin: 20px;
-    }
-    
-    article.nadpis-article {
-        height: 70vh;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    article#nahled {
-        height: 70vh;
-        width: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    
-    span#nadpis {
-        font-size: 4vh;
-        font-weight: bold;
-    }
-    
-    span.nazev-produkt {
-        font-size: 3vh;
-        font-weight: bold;
-        display: flex;
-        justify-content: center;
-    }
-    p.cena-produkt {
-        font-size: 2vh;
-        font-weight: bolder;
-    }
-    button.nakup{
-        height: 10%;
-        width: 50%;
-        border-radius: 5px;
-        border: none;
-        background-color: lawngreen;
-        color: white;
-        font-size: 1.2em;
-        cursor: pointer;
-    }
-    form {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    label {
-        font-weight: bold;
-    }
-    
-    input[type="number"] {
-        width: 150px;
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid black;
-    }
-    
-    button {
-        padding: 5px 10px;
-        border-radius: 5px;
-        border: none;
-        color: white;
-        cursor: pointer;
-    }
-    
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Verdana', sans-serif;
+    scroll-behavior: smooth;
+ }
+ body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #f0f0f0;
+ }
+ header {
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid #333 2px;
+    background: #fff;
+    position: sticky;
+    top: 0;
+    flex-direction: row-reverse; /* Moves the logo to the right */
+}
+ nav {
+     height: 100%;
+     width: 80%;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     order: 2; /* Moves the navigation menu to the left */
+ }
+ img#logo {
+     height: 60%;
+     width: 10%;
+     object-fit: contain;
+     order: 1; /* Moves the logo to the right */
+ }
+ img#zelenina {
+     height: 60%;
+     width: auto;
+     object-fit: cover;
+     order: 2; /* Moves the image below the title */
+     align-self: center; /* Centers the image */
+ }
+ img.obrazek-produkt {
+     width: 60%;
+     height: auto;
+ }
+ ul {
+     height: 50%;
+     width: 70%;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #fff;
+ }
+ li {
+     list-style: none;
+     height: 100%;
+     width: 30%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ a {
+     text-decoration: none;
+     color: #333;
+     font-size: 2vh;
+     font-weight: bold;
+ }
+ section#domu {
+     height: 100%;
+     width: 100%;
+     display: flex;
+     justify-content: space-evenly;
+     align-items: center;
+     background-color: #f0f0f0;
+ }
+ section#produkty {
+     height: 100%;
+     width: 100%;
+     display: grid;
+     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+     gap: 1rem;
+     padding-top: 5vh;
+     background-color: #f0f0f0;
+ }
+ article.produkt,.produkty-kosik {
+     height: 60vh;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+     border: 3px solid #333;
+     border-radius: 5px;
+     margin: 10px;
+     background-color: #fff;
+ }
+ article.nadpis-article {
+     height: 60vh;
+     width: 40%;
+     display: flex;
+    flex-direction: column; /* Changes the direction to column */
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+ }
+ article#nahled {
+     height: 60vh;
+     width: 40%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: #f0f0f0;
+ }
+ span#nadpis {
+     font-size: 3vh;
+     font-weight: bold;
+     color: #333;
+     order: 1; /* Moves the title above the image */
+ }
+ span.nazev-produkt {
+     font-size: 2vh;
+     font-weight: bold;
+     display: flex;
+     justify-content: center;
+     color: #333;
+ }
+
+ p.cena-produkt {
+     font-size: 1.5vh;
+     font-weight: bolder;
+     color: #333;
+ }
+ button.nakup{
+     height: 10%;
+     width: 40%;
+     border-radius: 5px;
+     border: none;
+     background-color: #333;
+     color: white;
+     font-size: 1em;
+     cursor: pointer;
+ }
+ form {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 10px;
+ }
+ label {
+     font-weight: bold;
+     color: #333;
+ }
+ input[type="number"] {
+  width: 120px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #333;
+ }
+ button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  background-color: #333;
+ }
+ .produkty-kosik div {
+  display: grid;
+  grid-template-columns: 40px auto auto;
+  grid-gap: 10px;
+  align-items: center;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: #fff;
+ }
+ .produkty-kosik img {
+     width: 20px;
+     height: 20px;
+ }
+ .produkty-kosik h2, .produkty-kosik p {
+     margin: 0;
+     color: #333;
+ }
+ .celkovaCena {
+  font-size: bolder;
+  color: #333;
+  display: grid;
+  align-items: center;
+  border: 1px solid #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 200px;
+  background-color: #fff;
+ }
+ 
+
     #filtr {
         background-color: #007BFF;
     }
@@ -183,38 +214,6 @@
     
     #razeniNazevSestupne, #razeniCenaSestupne {
         background-color: #DC3545;
-    }
-    
-    .produkty-kosik div {
-        display: grid;
-        grid-template-columns: 50px auto auto;
-        grid-gap: 10px;
-        align-items: center;
-        border: 1px solid green;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-    }
-    
-    .produkty-kosik img {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .produkty-kosik h2, .produkty-kosik p {
-        margin: 0;
-    }
-    
-    .celkovaCena {
-        font-size: bolder;
-        color: black;
-        display: grid;
-        align-items: center;
-        border: 1px solid green;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        width: 250px;
     }
     
     /* * * {

@@ -32,6 +32,43 @@
     </article>
 </section>
 <body>
-   
+    <style>
+      table {
+        width: 50%;
+        margin: auto; 
+        border-radius: 10px; 
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        border: 1px solid black; 
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+    </style>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Jmeno</th>
+                <th>Email</th>
+                <th>Objednavka</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(const produkty of data){ %>
+                <tr>
+                    <td><%= produkty.jmeno %></td>
+                    <td><%= produkty.email %></td>
+                    <td><%= produkty.produkty %></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
 </body>
 </html>

@@ -73,14 +73,6 @@ app.get('/registrace', (req, res) => {
     });
 });
 
-// obednavka ejs
-app.get('/objednavka', (req, res) => {
-    
-    res.render('objednavka', {
-    
-        titulek: "Všechny objednavky",
-    });
-});
 
 // prihlaseni uzivatele
 app.post("/prihlasit", (req, res) => {
@@ -134,10 +126,21 @@ app.post("/registrace", async (req, res) => {
 app.post('/objednavky', (req, res) => {
     let objednavka = req.body;
     let sql = 'INSERT INTO objednavky SET ?';
-    db.query(sql, objednavka, (err, result) => {
+    const pripojeni = mysql.createConnection(connectionString)
+    pripojeni.query(sql, objednavka, (err, result) => {
         if (err) throw err;
-        alert(result);
+        console.log(result);
         res.send('Objednávka byla vytvořena');
     });
 });
 
+// vypsani do objednavka ejs
+app.get("/objednavka", (req, res) =>{
+    const pripojeni = mysql.createConnection(connectionString)
+    const dotazSQL = "select jmeno,email,produkty from objednavky";
+    pripojeni.query(dotazSQL,(err,result)=>{
+        if (err) throw err;
+        res.render("objednavka", {data:result,titulek: "Uspěšně přihlášeno, mužete upravit objednavky!"});
+        
+    })
+})
