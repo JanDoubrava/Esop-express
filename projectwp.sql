@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Mar 04, 2024 at 09:13 PM
--- Server version: 8.2.0
--- PHP Version: 8.2.13
+-- Počítač: 127.0.0.1:3306
+-- Vytvořeno: Úte 05. bře 2024, 12:05
+-- Verze serveru: 8.0.31
+-- Verze PHP: 8.0.26
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,29 +18,39 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `projectwp`
+-- Databáze: `projectwp`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `objednavky`
+-- Struktura tabulky `objednavky`
 --
 
 DROP TABLE IF EXISTS `objednavky`;
 CREATE TABLE IF NOT EXISTS `objednavky` (
-  `Jméno` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `ID` int NOT NULL,
-  `Nazev` varchar(255) NOT NULL,
-  `Cena` int NOT NULL,
-  `Obrazek` varchar(255) NOT NULL
+  `jmeno` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `produkty` varchar(255) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Vypisuji data pro tabulku `objednavky`
+--
+
+INSERT INTO `objednavky` (`jmeno`, `email`, `produkty`) VALUES
+('asdas', 'asd@as.su', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('asdas', 'asd@as.su', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('asdas', 'asd@as.su', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('asdas', 'asd@as.su', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('Jan Doubrava', 'nevim@seznam.ru', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('Jan Doubrava', 'nevim@seznam.ru', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O'),
+('adasdasd', 'asdsa@asdasd.cz', '[{\"Obrazek\":\"http://localhost:81/obrazek/Ban%C3%A1n.png\",\"Nazev\":\"\\n                    Banán\\n\\n                \",\"Cena\":\"\\n                    12 Kč\\n                \"},{\"Obrazek\":\"http://localhost:81/obrazek/Okurka.png\",\"Nazev\":\"\\n                    O');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Struktura tabulky `products`
 --
 
 DROP TABLE IF EXISTS `products`;
@@ -53,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 ) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `products`
+-- Vypisuji data pro tabulku `products`
 --
 
 INSERT INTO `products` (`ID`, `Nazev`, `Cena`, `Obrazek`) VALUES
@@ -99,7 +109,7 @@ INSERT INTO `products` (`ID`, `Nazev`, `Cena`, `Obrazek`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktura tabulky `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -111,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `users`
+-- Vypisuji data pro tabulku `users`
 --
 
 INSERT INTO `users` (`id`, `user`, `password`) VALUES
