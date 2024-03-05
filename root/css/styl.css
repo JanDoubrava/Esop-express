@@ -216,6 +216,24 @@
         background-color: #DC3545;
     }
     
+
+    table {
+        width: 50%;
+        margin: auto; 
+        border-radius: 10px; 
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        border: 1px solid black; 
+    }
+    th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
     /* * * {
     margin: 0;
     padding: 0;
