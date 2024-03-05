@@ -72,7 +72,7 @@ function odeslatObjednavku(event) {
     })
     .then(response => response.text())
     .then(data => {
-        alert('Objednávka byla úspěšně odeslána:', data);
+        alert('Objednávka byla úspěšně odeslána:', data),
         localStorage.removeItem('produkty'); // vymazání produktů z localStorage
     })
     .catch((error) => {
