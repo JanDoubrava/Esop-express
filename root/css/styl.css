@@ -89,8 +89,8 @@
      padding-top: 5vh;
      background-color: #f0f0f0;
  }
- article.produkt,.produkty-kosik {
-     height: 60vh;
+ article.produkt {
+     height: 45vh;
      width: 100%;
      display: flex;
      flex-direction: column;
@@ -100,6 +100,25 @@
      border-radius: 5px;
      margin: 10px;
      background-color: #fff;
+ }
+ .kosikBody{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+ }
+ .produkty-kosik{
+    
+    height: fit-content;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border: 3px solid #333;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #fff;
  }
  article.nadpis-article {
      height: 60vh;
@@ -144,7 +163,7 @@
      border: none;
      background-color: #333;
      color: white;
-     font-size: 1em;
+     font-size: 0.9em;
      cursor: pointer;
  }
  form {

@@ -36,20 +36,19 @@
             <img id="zelenina" src="./obrazek/kosik-chalky.png">
         </article>
     </section>
-    <section class="celkovaCena" onload="celkovaCenaKosiku()">
-       <p class="cenaText">
-        Celková cena = 
-       </p>
-       
-
-        
-
+    <section class="kosikBody">
+        <section class="celkovaCena" onload="celkovaCenaKosiku()">
+            <p class="cenaText">
+             Celková cena = 
+            </p>
+         </section>
+         <!-- produkty -->
+         <article class="produkty-kosik">
+             <!-- Zde se zobrazí produkty v košíku -->
+             
+         </article>
     </section>
-    <!-- produkty -->
-    <article class="produkty-kosik">
-        <!-- Zde se zobrazí produkty v košíku -->
-        
-    </article>
+    
 
     <button onclick="vytvoritObjednavku()">Vytvořit objednávku</button>
 <form id="objednavkaForm" style="display: none;" onsubmit="odeslatObjednavku(event)">

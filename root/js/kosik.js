@@ -18,7 +18,7 @@ function pridejDoKosiku(button) {
     localStorage.setItem('kosik', JSON.stringify(kosik));
 
     alert('Produkt byl přidán do košíku');
-    alert(kosik);
+   // alert(kosik);
 }
 
 
@@ -72,8 +72,9 @@ function odeslatObjednavku(event) {
     })
     .then(response => response.text())
     .then(data => {
-        alert('Objednávka byla úspěšně odeslána:', data),
-        localStorage.removeItem('produkty'); // vymazání produktů z localStorage
+        
+        localStorage.clear(), // vymazání produktů z localStorage
+        alert('Objednávka byla úspěšně odeslána:', data)
     })
     .catch((error) => {
         console.error('Chyba:', error);
